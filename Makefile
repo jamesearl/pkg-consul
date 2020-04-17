@@ -1,11 +1,11 @@
 NAME=consul
-VERSION=1.7.1
-REVISION=2
+VERSION=1.7.2
+REVISION=1
 CONSUL_VERSION=$(VERSION)
 MAINT=james.earl.3@gmail.com
+DESCRIPTION="HashiCorp's Consul v$(CONSUL_VERSION)"
 
 DEB=$(NAME)_$(VERSION)-$(REVISION)
-
 DEB_64=$(DEB)_amd64.deb
 SRC_64=https://releases.hashicorp.com/consul/$(CONSUL_VERSION)/consul_$(CONSUL_VERSION)_linux_amd64.zip
 
@@ -33,6 +33,7 @@ bin/consul_$(CONSUL_VERSION)_linux_amd64: bin/
 
 dist/$(DEB_64): dist/ bin/consul_$(CONSUL_VERSION)_linux_amd64
 	fpm -s dir \
+		--description $(DESCRIPTION) \
 		-t deb \
 		-p dist/$(DEB_64) \
 		-n $(NAME) \
