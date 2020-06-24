@@ -11,7 +11,7 @@ SRC_64=https://releases.hashicorp.com/consul/$(CONSUL_VERSION)/consul_$(CONSUL_V
 
 .PHONY: dev build publish-gemfury ls uninstall install clean
 
-dev: clean build install
+dev: clean build
 
 build: dist/$(DEB_64)
 
