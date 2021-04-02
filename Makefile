@@ -1,5 +1,5 @@
 NAME=consul
-VERSION=1.8.0
+VERSION=1.9.4
 REVISION=1
 CONSUL_VERSION=$(VERSION)
 MAINT=james.earl.3@gmail.com
